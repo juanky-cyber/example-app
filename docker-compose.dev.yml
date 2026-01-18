@@ -1,0 +1,32 @@
+services:
+  db-dev:
+    image: postgres:16
+    container_name: postgres_dev
+    restart: always
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+
+  # Contenedor de Laravel
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app_dev
+    depends_on:
+      - db-dev
+    ports:
+      - "8080:8000"
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: db-dev 
+      DB_PORT: 5432
+      DB_DATABASE: laravel
+      DB_USERNAME: admin
+      DB_PASSWORD: 1234
+      APP_KEY: ${APP_KEY}
+      APP_ENV: local
+      APP_DEBUG: "true"

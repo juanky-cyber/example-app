@@ -1,0 +1,12 @@
+services:
+  db: 
+    image: postgres:16
+    container_name: postgres_local
+    restart: always
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+
