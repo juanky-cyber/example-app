@@ -11,7 +11,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://example-9pp5npl8y-antonios-projects-70787aa3.vercel.app/",
+        "APP_URL": "https://example-app-deploy-vercel-8rrg7j8lq-juankys-projects-68b9f4b5.vercel.app/",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
